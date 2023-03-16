@@ -1,0 +1,411 @@
+<world>
+  <name>Loc Lac</name>
+  <logo>string</logo>
+  <money>1</money>
+  <score>0</score>
+  <totalangels>0</totalangels>
+  <activeangels>0</activeangels>
+  <angelbonus>0</angelbonus>
+  <lastupdate>0</lastupdate>
+
+  <products>
+    <product>
+      <id>1</id>
+      <name>Champignon Bleu</name>
+      <logo>icons/Champignon_Bleu.png</logo>
+      <cout>1</cout>
+      <croissance>1.05</croissance>
+      <revenu>2</revenu>
+      <vitesse>5000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>5000</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>Cave à Champignon</name>
+          <logo>icons/Cave_a_Champignon.png</logo>
+          <seuil>30</seuil>
+          <idcible>1</idcible>
+          <ratio>1.25</ratio>
+          <typeratio>VITESSE</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Mandragore</name>
+          <logo>icons/Mandragore.png</logo>
+          <seuil>100</seuil>
+          <idcible>1</idcible>
+          <ratio>1.5</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Bonne Recolte</name>
+          <logo>icons/Bonne_Recolte.png</logo>
+          <seuil>1000</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+
+    <product>
+      <id>2</id>
+      <name>Corne de Kelbi</name>
+      <logo>icons/Corne_de_Kelbi.png</logo>
+      <cout>10</cout>
+      <croissance>1.1</croissance>
+      <revenu>14</revenu>
+      <vitesse>10000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>10000</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>Elevage de Kelbi</name>
+          <logo>icons/Elevage_de_Kelbi.png</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>1.25</ratio>
+          <typeratio>VITESSE</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Kelbi a Grande Cornes</name>
+          <logo>icons/Kelbi_a_Grande_Cornes.png</logo>
+          <seuil>250</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+
+    <product>
+      <id>3</id>
+      <name>Chasse de Grand Jaggi</name>
+      <logo>icons/Chasse_de_Grand_Jaggi.png</logo>
+      <cout>20</cout>
+      <croissance>1.15</croissance>
+      <revenu>22</revenu>
+      <vitesse>30000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>30000</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>Piege a Monstre</name>
+          <logo>icons/Piege_a_Monstre.png</logo>
+          <seuil>50</seuil>
+          <idcible>3</idcible>
+          <ratio>1.1</ratio>
+          <typeratio>VITESSE</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Cuir de Grand Jaggi</name>
+          <logo>icons/Cuir_de_Grand_Jaggi.png</logo>
+          <seuil>50</seuil>
+          <idcible>3</idcible>
+          <ratio>1.25</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Griffe de Grand Jaggi</name>
+          <logo>icons/Griffe_de_Grand_Jaggi.png</logo>
+          <seuil>250</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+
+    <product>
+      <id>4</id>
+      <name>Chasse de Basarios</name>
+      <logo>icons/Chasse_de_Basarios.png</logo>
+      <cout>30</cout>
+      <croissance>1.17</croissance>
+      <revenu>36</revenu>
+      <vitesse>40000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>40000</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>Carapace de Basarios</name>
+          <logo>icons/Carapace_de_Basarios.png</logo>
+          <seuil>50</seuil>
+          <idcible>4</idcible>
+          <ratio>1.25</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Aile de Basarios</name>
+          <logo>icons/Aile_de_Basarios.png</logo>
+          <seuil>250</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+
+    <product>
+      <id>5</id>
+      <name>Chasse de Rathalos</name>
+      <logo>icons/Chasse_de_Rathalos.png</logo>
+      <cout>50</cout>
+      <croissance>1.2</croissance>
+      <revenu>57</revenu>
+      <vitesse>100000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>100000</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>Flashinsecte</name>
+          <logo>icons/Flashinsecte.png</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>1.1</ratio>
+          <typeratio>VITESSE</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Cuirasse de Rathalos</name>
+          <logo>icons/Cuirasse_de_Rathalos.png</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>1.25</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Rubis Rathalos</name>
+          <logo>icons/Rubis_Rathalos.png</logo>
+          <seuil>250</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+
+    <product>
+      <id>6</id>
+      <name>Chasse de Kushala Daora</name>
+      <logo>icons/Chasse_de_Kushala_Daora.png</logo>
+      <cout>100</cout>
+      <croissance>1.35</croissance>
+      <revenu>140</revenu>
+      <vitesse>400000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>400000</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <pallier>
+          <name>Bombe Flash</name>
+          <logo>icons/Bombe_Flash.png</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>1.2</ratio>
+          <typeratio>VITESSE</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Ecaille de Kushala</name>
+          <logo>icons/Ecaille_de_Kushala.png</logo>
+          <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>1.25</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Joyau Daora</name>
+          <logo>icons/Joyau_Daora.png</logo>
+          <seuil>250</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>GAIN</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+</products>
+
+  <allunlocks>
+    <pallier>
+      <name>allunlocks1</name>
+      <logo>icons/allunlocks1.png</logo>
+      <seuil>300</seuil>
+      <idcible>0</idcible>
+      <ratio>1.5</ratio>
+      <typeratio>ange</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>allunlocks2</name>
+      <logo>icons/allunlocks2.png</logo>
+      <seuil>3000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.75</ratio>
+      <typeratio>ange</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+  </allunlocks>
+
+  <upgrades>
+    <pallier>
+      <name>Palico Motive</name>
+      <logo>icons/Palico_Motive.png</logo>
+      <seuil>1000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.05</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Rapide</name>
+      <logo>icons/Palico_Rapide.png</logo>
+      <seuil>1000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.05</ratio>
+      <typeratio>VITESSE</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Super Rapide</name>
+      <logo>icons/Palico_Super_Rapide.png</logo>
+      <seuil>10000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.1</ratio>
+      <typeratio>VITESSE</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Super Motive</name>
+      <logo>icons/Palico_Super_Motive.png</logo>
+      <seuil>10000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.1</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+  </upgrades>
+
+  <angelupgrades>
+    <pallier>
+      <name>Boisson Energisante</name>
+      <logo>icons/Boisson_Energisante.png</logo>
+      <seuil>1000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.05</ratio>
+      <typeratio>VITESSE</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Poudre de Vie</name>
+      <logo>icons/Poudre_de_Vie.png</logo>
+      <seuil>2000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.05</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Equipement de Pointe</name>
+      <logo>icons/Equipement_de_Pointe.png</logo>
+      <seuil>5000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.1</ratio>
+      <typeratio>VITESSE</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Chapardeur</name>
+      <logo>icons/Chapardeur.png</logo>
+      <seuil>10000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.15</ratio>
+      <typeratio>VITESSE</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Miaoucenaire</name>
+      <logo>icons/Miaoucenaire.png</logo>
+      <seuil>10000</seuil>
+      <idcible>0</idcible>
+      <ratio>1.2</ratio>
+      <typeratio>VITESSE</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+  </angelupgrades>
+
+  <managers>
+    <pallier>
+      <name>Palico Pro des Champignons</name>
+      <logo>icons/Palico_Pro_des_Champignons.png</logo>
+      <seuil>200</seuil>
+      <idcible>1</idcible>
+      <ratio>1</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Pro du Kelbi</name>
+      <logo>icons/Palico_Pro_du_Kelbi.png</logo>
+      <seuil>200</seuil>
+      <idcible>2</idcible>
+      <ratio>1</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Pro du Jaggi</name>
+      <logo>icons/Palico_Pro_du_Jaggi.png</logo>
+      <seuil>200</seuil>
+      <idcible>3</idcible>
+      <ratio>1</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Pro du Basarios</name>
+      <logo>icons/Palico_Pro_du_Basarios.png</logo>
+      <seuil>200</seuil>
+      <idcible>4</idcible>
+      <ratio>1</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Pro du Rathalos</name>
+      <logo>icons/Palico_Pro_du_Rathalos.png</logo>
+      <seuil>200</seuil>
+      <idcible>5</idcible>
+      <ratio>1</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Palico Pro du Kushala</name>
+      <logo>icons/Palico_Pro_du_Kushala.png</logo>
+      <seuil>200</seuil>
+      <idcible>6</idcible>
+      <ratio>1</ratio>
+      <typeratio>GAIN</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+  </managers>
+</world>
