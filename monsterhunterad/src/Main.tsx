@@ -422,7 +422,7 @@ export default function Main({ loadworld, username }: MainProps) {
                                         <div className="modalcost"> Type d'amélioration :{upgrades.typeratio} </div>
                                     </div>
                                     <div onClick={() => buyUpgrade(upgrades)}>
-                                        <button disabled={world.products[upgrades.idcible].quantite==0|| upgrades.seuil>world.money}
+                                        <button disabled={upgrades.seuil>world.money}
                                             onClick={handleSnackBarUpgrades} >Hire !
                                         </button>
                                     </div>
