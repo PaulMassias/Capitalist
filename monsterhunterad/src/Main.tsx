@@ -233,7 +233,7 @@ export default function Main({ loadworld, username }: MainProps) {
     function handleManagerBadges(){
         var i = 0;
         var nbActuel = 0;
-        var managersLocked = world.managers.filter(managers => !managers.unlocked);
+        var managersLocked = world.managers.filter(managers => !managers.unlocked && world.products[managers.idcible-1].quantite!=0);
         while(i<managersLocked.length){
             if(managersLocked[i].seuil<=world.money){
                 nbActuel +=1;

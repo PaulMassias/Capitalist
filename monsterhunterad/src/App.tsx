@@ -43,10 +43,10 @@ function App() {
 
 
   return (
-    <div>
+    <div className='principale'>
       <input className='id-joueur' type="text" value={username} onChange={onUserNameChanged}/> 
       <div className='NomMonde'>{ corps }</div>
-      <div>{main}</div>
+      <div >{main}</div>
     </div>
       
   );

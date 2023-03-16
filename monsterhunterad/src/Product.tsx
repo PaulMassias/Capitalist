@@ -3,7 +3,7 @@ import {World, Product} from '../world';
 import './styles.css';
 import { Orientation} from './progressBar';
 import MyProgressbar from "./progressBar"
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useInterval } from './myInterval';
 import { transform } from './utils';
 import { gql, useMutation } from '@apollo/client';
@@ -24,6 +24,9 @@ type ProductProps = {
 export default function ProductComp({product, onProductionDone, mult, money,onProductBuy, username } : ProductProps) {
 
 
+   useEffect(()=>{
+      calcMaxCanBuy()
+   },[mult]);
    
    const [timeLeft, setTimeLeft] = useState(product.timeleft);
    const [coutPourMultProduit, setCoutPourMultProduit] = useState(product.cout);
@@ -37,7 +40,7 @@ export default function ProductComp({product, onProductionDone, mult, money,onPr
       }
       }
      )
-     
+   
 
    function calcScore(){
       let ecoule = Date.now() - lastUpdate.current;
@@ -46,11 +49,9 @@ export default function ProductComp({product, onProductionDone, mult, money,onPr
          if(product.managerUnlocked){
             if(timeLeft !=0){
                if(ecoule>=timeLeft){
-                  console.log("production")
             		onProductionDone(product);
             		setTimeLeft(product.vitesse);
          		}else{
-            		console.log(timeLeft);
             		setTimeLeft(timeLeft - ecoule);
          		}
             }else{
@@ -59,11 +60,9 @@ export default function ProductComp({product, onProductionDone, mult, money,onPr
          }else{
             if(timeLeft !=0){
                if(ecoule>=timeLeft){
-                  console.log("production")
             		onProductionDone(product);
             		setTimeLeft(0);
          		}else{
-            		console.log(timeLeft);
             		setTimeLeft(timeLeft - ecoule);
          		}
             
@@ -83,47 +82,39 @@ export default function ProductComp({product, onProductionDone, mult, money,onPr
    }
 
    function calcMaxCanBuy(){
-      let max = 1;
-      let coutProduit =0;
-      if(product.quantite!=0){
-         while(true){
-            if(money<coutProduit){
-               break;
-            }
-            coutProduit = product.cout*(product.croissance**product.quantite+max);
-            max++;
+      let max = 0;
+      let coutProduitPrec =product.cout;
+      while(true){
+         if(money<coutProduitPrec){
+            break;
          }
-         return(max-3);
-      }else{
-         while(true){
-            if(money<coutProduit){
-               break;
-            }
-            coutProduit = product.cout*(product.croissance**max);
-            max++;
-         }
-         return(max-1);
+         coutProduitPrec += product.cout*product.croissance;
+         max++;
       }
+      console.log(max)
+      return(max-1);
    }
 
    function calcCout(){
       switch(mult){
          case "x1":
-            setCoutPourMultProduit(product.cout*(product.croissance**product.quantite));
+            if(product.quantite==0){
+               setCoutPourMultProduit(product.cout)
+            }else{setCoutPourMultProduit(product.cout*product.croissance**product.quantite);}
             setMaxProduitAchetable(1);
             break;
          case "x10": 
-            setCoutPourMultProduit(product.cout*(product.croissance**(product.quantite+10)));
+            setCoutPourMultProduit(product.cout*product.croissance**10);
             setMaxProduitAchetable(10);
             break;
          case "x100": 
-            setCoutPourMultProduit(product.cout*(product.croissance**(product.quantite+100)));
+            setCoutPourMultProduit(product.cout*product.croissance**100);
             setMaxProduitAchetable(100);
             break;
          case "Max":
             let max = calcMaxCanBuy()
             setMaxProduitAchetable(max);
-            setCoutPourMultProduit((product.cout*(product.croissance**product.quantite*max)));
+            setCoutPourMultProduit(product.cout*product.croissance**max);
             break;
       }
    }
