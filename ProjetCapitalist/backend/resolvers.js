@@ -88,7 +88,7 @@ module.exports = {
             }else{
                 if(world.money>=manager.seuil){
                     produit.managerUnlocked=true;
-                    manager.unlock=true;
+                    manager.unlocked=true;
                     world.money-=manager.seuil;
                 }else{
                     throw new Error(`Pas assez d'argent`);
