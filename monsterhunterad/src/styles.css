@@ -1,0 +1,166 @@
+.container {
+    display: grid; 
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 20% 28% 20% 30%; 
+    grid-template-rows: 15% 25% 25% 25%; 
+    gap: 50px 3px; 
+    grid-template-areas: 
+      "logo-monde argent multipli button"
+      "boutonmenu1 produit-1 . produit4"
+      "boutonmenu2 produit2 . produit5"
+      "boutonmenu3 produit3 . produit6"; 
+  }
+  .produit-1 { grid-area: produit-1; }
+  .produit2 { grid-area: produit2; }
+  .produit3 { grid-area: produit3; }
+  .produit4 { grid-area: produit4; }
+  .produit5 { grid-area: produit5; }
+  .produit6 { grid-area: produit6; }
+  .logo-monde { grid-area: logo-monde; left:10%}
+  .argent { grid-area: argent; }
+  .multipli { grid-area: multipli; }
+  .button {grid-area: button;}
+  .id-joueur {
+    position: sticky;
+    text-align: center;
+    left:90%;
+    top: 10px;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+  .boutonmenu1 { grid-area: boutonmenu1; text-align: center; padding-bottom: 5%; }
+  .boutonmenu2 { grid-area: boutonmenu2; text-align: center; }
+  .boutonmenu3 { grid-area: boutonmenu3; }
+  .NomMonde {position:fixed; bottom:20px; left:55% }
+  canvas {
+    width: 80%;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .round {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: solid;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+   }
+   .box{
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    padding: 1rem;
+    text-align: center;
+   }
+   .centered{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+   }
+   
+   button:disabled,
+   button[disabled]{
+   border: 1px solid #999999;
+   background-color: #ffffff;
+   color: #ff0a0a;
+  }
+
+  button {
+    padding: 8px 20px;
+    background-color:#000000 ;
+    color: #FFD700;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 150px; /* ajuster la largeur en fonction de vos besoins */
+    height: 35px; /* ajuster la hauteur en fonction de vos besoins */
+  }
+  button:hover:not(:disabled) {
+    background-color: #ff9900;
+  }
+  .modal {
+    position: fixed; /* reste en place */
+    z-index: 2; /* au dessus du reste */
+    width: 650px; /* largeur */
+    height: 650px; /* hauteur */
+    overflow: auto; /* barre de scroll si besoin */
+    background-color: white; /* opaque */
+    border: solid;
+    top:5%; /* a 10% du haut */
+    left:20%; /* a 20% de la gauche */
+   }
+
+   .closebutton{
+    left:80%;
+   }
+   .modalgrid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .infosmodal {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .modalname {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .modalcible {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+  .modalcost {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #4caf50;
+  }
+  .roundModal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .argent {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .multiplicateur {
+    font-size: 18px;
+    color: #333;
+    border: 1px solid
+
+  }
+
+  

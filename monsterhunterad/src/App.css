@@ -1,0 +1,37 @@
+.header {
+  display: grid;
+  grid-template-columns: 25% 25% 30% 20%;
+  grid-template-rows: 20% 25% 25% 25%
+  }
+
+ .main {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  }
+
+/*
+  .container {
+    display: grid; 
+    grid-template-columns: 20% 28% 20% 30%; 
+    grid-template-rows: 15% 25% 25% 25%; 
+    gap: 50px 3px; 
+    grid-template-areas: 
+      "logo-monde argent multipli ."
+      "boutonmenu1 produit-1 . produit4"
+      "boutonmenu2 produit2 . produit5"
+      "boutonmenu3 produit3 . produit6"; 
+  }
+  .produit-1 { grid-area: produit-1; }
+  .produit2 { grid-area: produit2; }
+  .produit3 { grid-area: produit3; }
+  .produit4 { grid-area: produit4; }
+  .produit5 { grid-area: produit5; }
+  .produit6 { grid-area: produit6; }
+  .logo-monde { grid-area: logo-monde; left:10%}
+  .argent { grid-area: argent; }
+  .multipli { grid-area: multipli; }
+  .id-joueur {position: sticky; left:85%; top: 10px;}
+  .boutonmenu1 { grid-area: boutonmenu1; }
+  .boutonmenu2 { grid-area: boutonmenu2; }
+  .boutonmenu3 { grid-area: boutonmenu3; }
+  .NomMonde {position:fixed; bottom:20px; left:45% }*/
