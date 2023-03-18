@@ -1,6 +1,6 @@
 module.exports = {
     "name": "Loc Lac",
-    "logo": "icones/logomonde.jpg",
+    "logo": "icons/logomonde.jpg",
     "money": 1000,
     "score": 0,
     "totalangels": 0,
@@ -240,7 +240,7 @@ module.exports = {
     "allunlocks": [
         {
             "name": "allunlocks1",
-            "logo": "icones/allunlocks1.jpg",
+            "logo": "icons/allunlocks1.jpg",
             "seuil": 300,
             "idcible": 0,
             "ratio": 2,
@@ -249,7 +249,7 @@ module.exports = {
         },
         {
             "name": "allunlocks2",
-            "logo": "icones/allunlocks2.jpg",
+            "logo": "icons/allunlocks2.jpg",
             "seuil": 3000,
             "idcible": 0,
             "ratio": 2,
@@ -269,7 +269,7 @@ module.exports = {
         },
         {
             "name": "Palico Rapide",
-            "logo": "icones/Palico_Rapide.jpg",
+            "logo": "icons/Palico_Rapide.jpg",
             "seuil": 1000,
             "idcible": 0,
             "ratio": 1.05,
@@ -278,7 +278,7 @@ module.exports = {
         },
         {
             "name": "Palico Super Rapide",
-            "logo": "icones/Palico_Super_Rapide.jpg",
+            "logo": "icons/Palico_Super_Rapide.jpg",
             "seuil": 10000,
             "idcible": 0,
             "ratio": 1.2,
@@ -287,7 +287,7 @@ module.exports = {
         },
         {
             "name": "Palico Super Motive",
-            "logo": "icones/Palico_Super_Motive.jpg",
+            "logo": "icons/Palico_Super_Motive.jpg",
             "seuil": 10000,
             "idcible": 0,
             "ratio": 1.2,
@@ -298,7 +298,7 @@ module.exports = {
     "angelupgrades": [
         {
             "name": "Boisson Energisante",
-            "logo": "icones/Boisson_Energisante.png",
+            "logo": "icons/Boisson_Energisante.png",
             "seuil": 1000,
             "idcible": 0,
             "ratio": 1.3,
@@ -307,7 +307,7 @@ module.exports = {
         },
         {
             "name": "Poudre de Vie",
-            "logo": "icones/Poudre_de_Vie.png",
+            "logo": "icons/Poudre_de_Vie.png",
             "seuil": 2000,
             "idcible": 0,
             "ratio": 1.2,
@@ -316,7 +316,7 @@ module.exports = {
         },
         {
             "name": "Equipement de Pointe",
-            "logo": "icones/Equipement_de_Pointe.png",
+            "logo": "icons/Equipement_de_Pointe.png",
             "seuil": 5000,
             "idcible": 0,
             "ratio": 1.4,
@@ -325,7 +325,7 @@ module.exports = {
         },
         {
             "name": "Chapardeur",
-            "logo": "icones/Chapardeur.png",
+            "logo": "icons/Chapardeur.png",
             "seuil": 10000,
             "idcible": 0,
             "ratio": 1.2,
@@ -334,7 +334,7 @@ module.exports = {
         },
         {
             "name": "Miaoucenaire",
-            "logo": "icones/Miaoucenaire.png",
+            "logo": "icons/Miaoucenaire.png",
             "seuil": 10000,
             "idcible": 0,
             "ratio": 1.5,
@@ -363,7 +363,7 @@ module.exports = {
         },
         {
             "name": "Palico Pro du Jaggi",
-            "logo": "icones/Palico_Pro_du_Jaggi.jpg",
+            "logo": "icons/Palico_Pro_du_Jaggi.jpg",
             "seuil": 200,
             "idcible": 3,
             "ratio": 1,
@@ -372,7 +372,7 @@ module.exports = {
         },
         {
             "name": "Palico Pro du Basarios",
-            "logo": "icones/Palico_Pro_du_Basarios.jpg",
+            "logo": "icons/Palico_Pro_du_Basarios.jpg",
             "seuil": 200,
             "idcible": 4,
             "ratio": 1,
@@ -381,7 +381,7 @@ module.exports = {
         },
         {
             "name": "Palico Pro du Rathalos",
-            "logo": "icones/Palico_Pro_du_Rathalos.jpg",
+            "logo": "icons/Palico_Pro_du_Rathalos.jpg",
             "seuil": 200,
             "idcible": 5,
             "ratio": 1,
@@ -390,7 +390,7 @@ module.exports = {
         },
         {
             "name": "Palico Pro du Kushala",
-            "logo": "icones/Palico_Pro_du_Kushala.jpg",
+            "logo": "icons/Palico_Pro_du_Kushala.jpg",
             "seuil": 200,
             "idcible": 6,
             "ratio": 1,
