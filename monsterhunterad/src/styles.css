@@ -47,7 +47,10 @@
     }
   .boutonmenu1 { 
     grid-area: boutonmenu1; 
-    text-align: center; 
+    text-align: center;
+    position : fixed;
+    padding-left: 5%;
+    padding-bottom: 40%;
  }
   .boutonmenu2 { grid-area: boutonmenu2; text-align: center; }
   .boutonmenu3 { grid-area: boutonmenu3; }

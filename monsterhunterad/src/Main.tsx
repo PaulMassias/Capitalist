@@ -16,9 +16,10 @@ type MainProps = {
 
     loadworld: World
     username: string
+    refetchWorld: () => World
    }
 
-export default function Main({ loadworld, username }: MainProps) {
+export default function Main({ loadworld, username, refetchWorld }: MainProps) {
 
     const [world, setWorld] = useState(JSON.parse(JSON.stringify(loadworld)) as World)
     const [mult, setMult] = useState("x1");
@@ -32,13 +33,16 @@ export default function Main({ loadworld, username }: MainProps) {
     const [OpenUnlocks, setOpenUnlocks]= useState(false);
     const [typeUnlock,setTypeUnlock] = useState("");
     const [OpenUpgrades, setOpenUpgrades]= useState(false);
-
     const [upgradesBadges, setUpgradesBadges]= useState(0);
     const [Argent, setArgent]= useState(world.money);
 
     useEffect(() => {
         setWorld(JSON.parse(JSON.stringify(loadworld)) as World)
     }, [loadworld])
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+// Ici on trouvera les défintions de "méthodes" des requêtes graphQL éffectués grâce a Apollo
 
     const [acheterQtProduit] = useMutation(ACHETER_QT_PRODUIT,
         { context: { headers: { "x-user": username }},
@@ -52,16 +56,26 @@ export default function Main({ loadworld, username }: MainProps) {
             console.log("erreur");
         }})  
         
-    const [acheterCashUpgrades] = useMutation(ACHETER_CASH_UPGRADES,
+    const [acheterCashUpgrade] = useMutation(ACHETER_CASH_UPGRADE,
         { context: { headers: { "x-user": username }},
         onError: (error): void => {
             console.log("erreur");
         }})
 
+    const [resetWorld] = useMutation(RESET_WORLD,
+        {
+            context: { headers: { "x-user": username } },
+            onError: (error): void => {
+                console.log("erreur");
+            }
+        })
+
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+
 
 
     function onProductionDone(p: Product): void {
-        let gain = p.revenu*p.quantite;
+        let gain = p.revenu*p.quantite*(1+world.activeangels*world.angelbonus/100);
         
         world.money =world.money+ gain;
         setArgent(Argent+gain);
@@ -91,6 +105,7 @@ export default function Main({ loadworld, username }: MainProps) {
 
     function  onProductBuy(product: Product,qt: number){
         let cout= 0;
+        let i=0;
         console.log(qt)
         if(product.quantite == 0){
             setArgent(Argent-product.cout);
@@ -99,12 +114,18 @@ export default function Main({ loadworld, username }: MainProps) {
             acheterQtProduit({ variables: { id: product.id,quantite: qt } });
         }
         else{
-        cout = product.cout*(product.croissance**(product.quantite+qt-1));
+
+        while (true) {
+            if (i >= qt) {
+                break;
+            }
+        cout += product.cout * product.croissance;
+        i++;
+        }
         console.log(cout);
         setArgent(Argent-cout);
         product.quantite += qt;
         world.money=world.money-cout;
-        
         acheterQtProduit({ variables: { id: product.id, quantite: qt } });
         product.paliers.filter(paliers => !paliers.unlocked).map(
             paliers => {if(product.quantite>=paliers.seuil){
@@ -199,7 +220,7 @@ export default function Main({ loadworld, username }: MainProps) {
         if(world.money >= upgrade.seuil){
             world.money = world.money-upgrade.seuil;
             upgrade.unlocked=true;
-            acheterCashUpgrades({ variables: { name : upgrade.name } });
+            acheterCashUpgrade({ variables: { name : upgrade.name } });
             if(upgrade.typeratio == "vitesse"){
                 world.products[upgrade.idcible].vitesse = world.products[upgrade.idcible].vitesse/upgrade.ratio;
             }else{
@@ -263,6 +284,13 @@ export default function Main({ loadworld, username }: MainProps) {
 
     }
 
+    function refresh(){
+
+        resetWorld()
+        setWorld(refetchWorld())
+        //window.location.reload()
+    }
+
 
     useInterval(() => handleManagerBadges(), 500)
     useInterval(() => handleUpgradesBadges(), 500)
@@ -273,7 +301,9 @@ export default function Main({ loadworld, username }: MainProps) {
             <div className='argent'>
                 <span dangerouslySetInnerHTML={{ __html: transform(world.money) }} /> $ 
             </div>
-            <div className='multiplicateur'> Score : {world.score} </div>
+            <div className='multiplicateur'> Score : 
+                <span dangerouslySetInnerHTML={{ __html: transform(world.score) }} />
+            </div>
             <div className='button'> <button onClick={changeValue}>{mult}</button> </div>
             <div className='produit-1'>
                 <ProductComp onProductionDone={onProductionDone} product={world.products[0]} mult={mult} money={world.money}
@@ -447,7 +477,7 @@ export default function Main({ loadworld, username }: MainProps) {
                             <div className='box'>nouveaux anges : <span dangerouslySetInnerHTML={{ __html: transform(150*Math.sqrt(world.score/10**15)-world.totalangels) }} /></div>
                         </div> 
                     </div>
-                    <button>Reset</button>           
+                    <button onClick={refresh}>Reset</button>           
                 </div>
             }
             {/*Modal d'affichage des Angels Upgrades*/}
@@ -493,7 +523,7 @@ export default function Main({ loadworld, username }: MainProps) {
 const ACHETER_QT_PRODUIT = gql(`
    mutation acheterQtProduit($id: Int!, $quantite: Int!) {
         acheterQtProduit(id: $id, quantite: $quantite) {
-            id
+            id  
       }
    }`);
 
@@ -504,9 +534,17 @@ const ENGAGER_MANAGER = gql(`
       }
    }`);
 
-   const ACHETER_CASH_UPGRADES = gql(`
-   mutation acheterCashUpgrades($name: String!) {
-        acheterCashUpgrades(name: $name) {
+   const ACHETER_CASH_UPGRADE = gql(`
+   mutation acheterCashUpgrade($name: String!) {
+        acheterCashUpgrade(name: $name) {
            name
      }
   }`);
+
+  const RESET_WORLD = gql(`
+  mutation resetWorld{
+    resetWorld{
+        name
+    }
+  }
+  `);

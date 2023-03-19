@@ -107,7 +107,7 @@ module.exports = {
                 throw new Error(`L'upgrade avec le nom ${args.name} n'existe pas`);
             }else{
                 if(world.money>=upgrade.seuil){
-                    upgrade.unlock=true;
+                    upgrade.unlocked=true;
                     world.money-=upgrade.seuil;
                 }else{
                     throw new Error(`Pas assez d'argent`);

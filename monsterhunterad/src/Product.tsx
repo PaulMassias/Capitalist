@@ -24,9 +24,6 @@ type ProductProps = {
 export default function ProductComp({product, onProductionDone, mult, money,onProductBuy, username } : ProductProps) {
 
 
-   /*useEffect(()=>{
-      calcMaxCanBuy()
-   },[mult]);*/
    
    const [timeLeft, setTimeLeft] = useState(product.timeleft);
    const [coutPourMultProduit, setCoutPourMultProduit] = useState(product.cout);
@@ -96,25 +93,48 @@ export default function ProductComp({product, onProductionDone, mult, money,onPr
    }
 
    function calcCout(){
+      let coutpourmult = product.cout;
+      let i=0;
       switch(mult){
          case "x1":
             if(product.quantite==0){
                setCoutPourMultProduit(product.cout)
-            }else{setCoutPourMultProduit(product.cout*product.croissance**product.quantite);}
+            }else{setCoutPourMultProduit(product.cout*(product.croissance**product.quantite));}
             setMaxProduitAchetable(1);
             break;
          case "x10": 
-            setCoutPourMultProduit(product.cout*product.croissance**10+product.quantite);
+            while (true) {
+               if (i >= 10) {
+                  break;
+               }
+               coutpourmult += product.cout * product.croissance;
+               i++;
+            }
+            setCoutPourMultProduit(coutpourmult);
             setMaxProduitAchetable(10);
             break;
          case "x100": 
-            setCoutPourMultProduit(product.cout*product.croissance**100+product.quantite);
+            while (true) {
+               if (i >= 100) {
+                  break;
+               }
+               coutpourmult += product.cout * product.croissance;
+               i++;
+            }
+            setCoutPourMultProduit(coutpourmult);
             setMaxProduitAchetable(100);
             break;
          case "Max":
             let max = calcMaxCanBuy()
+            while (true) {
+               if (i >= max) {
+                  break;
+               }
+               coutpourmult += coutpourmult * product.croissance;
+               i++;
+            }
+            setCoutPourMultProduit(coutpourmult);
             setMaxProduitAchetable(max);
-            setCoutPourMultProduit(product.cout*product.croissance**max);
             break;
       }
    }

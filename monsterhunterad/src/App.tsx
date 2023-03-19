@@ -6,7 +6,7 @@ import './styles.css';
 import { gql, useQuery,ApolloClient, useApolloClient } from '@apollo/client';
 import { useState, } from 'react';
 import Main from './Main';
-import {World} from '../world';
+import {World} from './world';
 
 
 function App() {
@@ -38,9 +38,16 @@ function App() {
   if (loading) corps = <div> Loading... </div>
   else if (error) corps = <div> Erreur de chargement du monde ! </div>
   else {corps = <div> { data.getWorld.name } </div>
-        main = <Main loadworld={data.getWorld} username={username} />}
+        main = <Main loadworld={data.getWorld} username={username} refetchWorld={refetchWorld} />}
  
 
+        function refetchWorld():World{
+        refetch()
+        if(loading){console.log("loading")}
+        else if(error){console.log("erreur de chargement")}
+        else{return data.getWorld}
+        return new World
+        }
 
   return (
     <div className='principale'>
