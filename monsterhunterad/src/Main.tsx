@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import logo from './logo.svg';
 import './styles.css';
 import { monitorEventLoopDelay } from 'perf_hooks';
-import { gql, useQuery,ApolloClient, useApolloClient, useMutation } from '@apollo/client';
+import { gql, useMutation } from '@apollo/client';
 import { useState } from 'react';
 import {Palier, World, Product} from '../world';
 import { transform } from './utils';
@@ -198,12 +198,12 @@ export default function Main({ loadworld, username }: MainProps) {
         if(world.money >= upgrade.seuil){
             world.money = world.money-upgrade.seuil;
             upgrade.unlocked=true;
+            acheterCashUpgrades({ variables: { name : upgrade.name } });
             if(upgrade.typeratio == "vitesse"){
                 world.products[upgrade.idcible].vitesse = world.products[upgrade.idcible].vitesse/upgrade.ratio;
             }else{
                 world.products[upgrade.idcible].revenu = world.products[upgrade.idcible].revenu*upgrade.ratio;
             }
-            {/*engagerManager({ variables: { name: upgrade.name } });*/}
         }
     }
 
@@ -493,6 +493,7 @@ const ACHETER_QT_PRODUIT = gql(`
    mutation acheterQtProduit($id: Int!, $quantite: Int!) {
         acheterQtProduit(id: $id, quantite: $quantite) {
             id
+            cout
       }
    }`);
 

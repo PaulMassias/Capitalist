@@ -1,6 +1,6 @@
 module.exports = {
     "name": "Loc Lac",
-    "logo": "icones/logomonde.jpg",
+    "logo": "icons/logomonde.jpg",
     "money": 1000,
     "score": 0,
     "totalangels": 0,
@@ -11,7 +11,7 @@ module.exports = {
         {
             "id": 1,
             "name": "premier produit",
-            "logo": "icones/premierproduit.jpg",
+            "logo": "icons/premierproduit.jpg",
             "cout": 4,
             "croissance": 1.07,
             "revenu": 1,
@@ -22,7 +22,7 @@ module.exports = {
             "paliers": [
                 {
                     "name": "Nom du premier palier",
-                    "logo": "icones/premierpalier.jpg",
+                    "logo": "icons/premierpalier.jpg",
                     "seuil": 20,
                     "idcible": 1,
                     "ratio": 2,
@@ -31,7 +31,7 @@ module.exports = {
                 },
                 {
                     "name": "Nom deuxième palier",
-                    "logo": "icones/deuxiemepalier.jpg",
+                    "logo": "icons/deuxiemepalier.jpg",
                     "seuil": 75,
                     "idcible": 1,
                     "ratio": 2,
@@ -43,7 +43,7 @@ module.exports = {
         {
             "id": 2,
             "name": "Deuxième produit",
-            "logo": "icones/deuxiemeproduit.jpg",
+            "logo": "icons/deuxiemeproduit.jpg",
             "cout": 10,
             "croissance": 1.18,
             "revenu": 1,
@@ -57,7 +57,7 @@ module.exports = {
     "allunlocks": [
         {
             "name": "Nom du premier unlock général",
-            "logo": "icones/premierunlock.jpg",
+            "logo": "icons/premierunlock.jpg",
             "seuil": 30,
             "idcible": 0,
             "ratio": 2,
@@ -68,7 +68,7 @@ module.exports = {
     "upgrades": [
         {
             "name": "Nom du premier upgrade",
-            "logo": "icones/premierupgrade.jpg",
+            "logo": "icons/premierupgrade.jpg",
             "seuil": 3,
             "idcible": 1,
             "ratio": 3,
@@ -79,7 +79,7 @@ module.exports = {
     "angelupgrades": [
         {
             "name": "Angel Sacrifice",
-            "logo": "icones/angel.png",
+            "logo": "icons/angel.png",
             "seuil": 10,
             "idcible": 0,
             "ratio": 3,
@@ -90,7 +90,7 @@ module.exports = {
     "managers": [
         {
             "name": "Wangari Maathai",
-            "logo": "icones/WangariMaathai.jpg",
+            "logo": "icons/WangariMaathai.jpg",
             "seuil": 10,
             "idcible": 1,
             "ratio": 0,

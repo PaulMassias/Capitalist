@@ -138,7 +138,7 @@ module.exports = {
                     "name": "Carapace de Basarios",
                     "logo": "icons/Carapace_de_Basarios.png",
                     "seuil": 50,
-                    "idcible": 3,
+                    "idcible": 4,
                     "ratio": 1.25,
                     "typeratio": "gain",
                     "unlocked": false

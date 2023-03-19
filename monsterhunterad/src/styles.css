@@ -48,9 +48,7 @@
   .boutonmenu1 { 
     grid-area: boutonmenu1; 
     text-align: center; 
-    padding-bottom: 70%;
-    position: fixed;
-    padding-left: 5%; }
+ }
   .boutonmenu2 { grid-area: boutonmenu2; text-align: center; }
   .boutonmenu3 { grid-area: boutonmenu3; }
   .NomMonde {position:fixed; bottom:20px; left:55% }
@@ -68,6 +66,7 @@
     display:block;
     margin-left: auto;
     margin-right: auto;
+    background-color: #ffffff;
    }
    .box{
     border: 3px solid rgba(0,0,0,.125);

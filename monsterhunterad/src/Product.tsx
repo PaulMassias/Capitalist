@@ -24,9 +24,9 @@ type ProductProps = {
 export default function ProductComp({product, onProductionDone, mult, money,onProductBuy, username } : ProductProps) {
 
 
-   useEffect(()=>{
+   /*useEffect(()=>{
       calcMaxCanBuy()
-   },[mult]);
+   },[mult]);*/
    
    const [timeLeft, setTimeLeft] = useState(product.timeleft);
    const [coutPourMultProduit, setCoutPourMultProduit] = useState(product.cout);
@@ -104,11 +104,11 @@ export default function ProductComp({product, onProductionDone, mult, money,onPr
             setMaxProduitAchetable(1);
             break;
          case "x10": 
-            setCoutPourMultProduit(product.cout*product.croissance**10);
+            setCoutPourMultProduit(product.cout*product.croissance**10+product.quantite);
             setMaxProduitAchetable(10);
             break;
          case "x100": 
-            setCoutPourMultProduit(product.cout*product.croissance**100);
+            setCoutPourMultProduit(product.cout*product.croissance**100+product.quantite);
             setMaxProduitAchetable(100);
             break;
          case "Max":
