@@ -102,8 +102,9 @@ export default function Main({ loadworld, username }: MainProps) {
         cout = product.cout*(product.croissance**(product.quantite+qt-1));
         console.log(cout);
         setArgent(Argent-cout);
-        world.money=world.money-cout;
         product.quantite += qt;
+        world.money=world.money-cout;
+        
         acheterQtProduit({ variables: { id: product.id, quantite: qt } });
         product.paliers.filter(paliers => !paliers.unlocked).map(
             paliers => {if(product.quantite>=paliers.seuil){
@@ -493,7 +494,6 @@ const ACHETER_QT_PRODUIT = gql(`
    mutation acheterQtProduit($id: Int!, $quantite: Int!) {
         acheterQtProduit(id: $id, quantite: $quantite) {
             id
-            cout
       }
    }`);
 
